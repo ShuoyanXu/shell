@@ -55,6 +55,7 @@ find data/processed/user_logs -type f -name '*ipaddr*' -delete
 
 # 8. Create ./data/inventory.txt listing all files in subfolders of ./data/processed
 find data/processed -type f -print | sed 's#^data/##' > data/inventory.txt
+
 ###########################################
 
 echo "Project setup is complete!"

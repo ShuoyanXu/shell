@@ -18,6 +18,7 @@ cd newproject
 
 mkdir analysis output
 touch README.md
+echo "# Project Name: DSI Consulting Inc." > README.md
 touch analysis/main.py
 
 # download client data
@@ -54,6 +55,9 @@ find data/raw -type f -name '*ipaddr*' -delete
 find data/processed/user_logs -type f -name '*ipaddr*' -delete
 
 # 8. Create ./data/inventory.txt listing all files in subfolders of ./data/processed
+find data/processed -type f -print | sed 's#^data/##' > data/inventory.txt
+
+# 8. Create a file named ./data/inventory.txt that lists all the files in the subfolders of ./data/processed
 find data/processed -type f -print | sed 's#^data/##' > data/inventory.txt
 
 ###########################################
